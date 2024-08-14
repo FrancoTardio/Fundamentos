@@ -1,0 +1,17 @@
+#include <iostream>
+#include <math.h>
+ using namespace std;
+ 
+int main()
+{
+    float a,b,c,d,f;
+    cout<<"Ingresar el valor del primer lado triangulo en cm: "; 
+    cin>>a;
+    cout<<"Ingresar el valor del segundo lado triangulo en cm: "; 
+    cin>>b;
+    cout<<"Ingresar el valor del tercer lado triangulo en cm: "; 
+    cin>>c;
+    d = (a+b+c)/2;
+    f = sqrt(d*(d-a)*(d-b)*(d-c));
+    cout<<"El area de tu triangulo es: "<<f<<"cm^2";
+}
