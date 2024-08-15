@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float a,b,c,d;
+    cout<<"Ingresa el valor de la altura del triangulo en cm ";
+    cin>>a;
+    cout<<"Ingresa el valor de la base del triangulo en cm ";
+    cin>>b;
+    c=(a*b)/2;
+    cout<<"El tamaño del area de tu triangulo es: "<<c<<"cm^2";
+}
