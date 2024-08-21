@@ -21,11 +21,11 @@ int main()
     else if(d>0){
         x1=(-b+sqrt(d))/(2*a);
         x2=(-b-sqrt(d))/(2*a);
-        cout<<"La ecuacion tiene de raices a: ";
+        cout<<"La ecuacion tiene de raices a: "<<endl;
         cout<<"raiz 1: "<<x1<<endl;
         cout<<"raiz 2: "<<x2<<endl;
     }else {
-        cout<<"Las raices imaginarias de la ecuacion son:";
+        cout<<"Las raices imaginarias de la ecuacion son:"<<endl;
         cout<<"raiz 1: "<<x<<"+"<<sqrt(-d)/(2*a)<<"i"<<endl;
         cout<<"raiz 2: "<<x<<"+"<<sqrt(-d)/(2*a)<<"i"<<endl;
     }
