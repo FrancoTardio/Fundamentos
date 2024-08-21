@@ -6,18 +6,20 @@ int main()
     double a,b,c,d,x,x1,x2;
     cout<<"Ingrese valor de a"<<endl;
     cin>>a;
-    if(a==0)
-    cout<<"La ecuacion no tinee solucion";
+    if(a==0){
+        cout<<"La ecuacion no tinee solucion";
+        return 1;
+        }
     else{
-    cout<<"Ingrese valor de b"<<endl;
-    cin>>b;
-    cout<<"Ingrese valor de c"<<endl;
-    cin>>c;
-    }
+        cout<<"Ingrese valor de b"<<endl;
+        cin>>b;
+        cout<<"Ingrese valor de c"<<endl;
+        cin>>c;
+        }
     d=b*b-4*a*c;
     x=-b/(2*a);
     if (d==0)
-    cout<<"La ecuacion tiene raiz unica de: "<<x;
+        cout<<"La ecuacion tiene raiz unica de: "<<x;
     else if(d>0){
         x1=(-b+sqrt(d))/(2*a);
         x2=(-b-sqrt(d))/(2*a);
