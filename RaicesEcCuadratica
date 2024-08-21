@@ -1,0 +1,33 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main()
+{
+    double a,b,c,d,x,x1,x2;
+    cout<<"Ingrese valor de a"<<endl;
+    cin>>a;
+    if(a==0)
+    cout<<"La ecuacion no tinee solucion";
+    else{
+    cout<<"Ingrese valor de b"<<endl;
+    cin>>b;
+    cout<<"Ingrese valor de c"<<endl;
+    cin>>c;
+    }
+    d=b*b-4*a*c;
+    x=-b/(2*a);
+    if (d==0)
+    cout<<"La ecuacion tiene raiz unica de: "<<x;
+    else if(d>0){
+        x1=(-b+sqrt(d))/(2*a);
+        x2=(-b-sqrt(d))/(2*a);
+        cout<<"La ecuacion tiene de raices a: ";
+        cout<<"raiz 1: "<<x1<<endl;
+        cout<<"raiz 2: "<<x2<<endl;
+    }else {
+        cout<<"Las raices imaginarias de la ecuacion son:";
+        cout<<"raiz 1: "<<x<<"+"<<sqrt(-d)/(2*a)<<"i"<<endl;
+        cout<<"raiz 2: "<<x<<"+"<<sqrt(-d)/(2*a)<<"i"<<endl;
+    }
+    return 0;
+}
