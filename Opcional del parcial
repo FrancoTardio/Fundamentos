@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    float total,desc,valor;
+    cout<<"Ingresa el valor de la compra"<<endl;
+    cin>>valor;
+    desc=0;
+    total=valor;
+    if(valor<=0){
+        cout<<"valor no valido";
+        return 1;
+    }
+    if(total>100){
+        cout<<"su compra tuvo un descuento del 15%"<<endl;
+        desc=0.85;
+        total=valor*desc;
+    }
+    else
+        cout<<"Su compra no tuvo descuento"<<endl;
+    
+    cout<<"El total de su compra es : "<<total;
+    
+
+    return 0;
+}
