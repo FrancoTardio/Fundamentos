@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+    string palabra;
+    int longitud;
+    bool palindromo=true;
+    cout<<"Ingrese una palabra"<<endl;
+    getline(cin,palabra);
+    longitud = palabra.length();
+    for(int i=0;i<longitud/2;i++){
+        if (palabra.at(i)!=palabra.at(longitud-1-i)){
+            palindromo=false;
+            break;
+        }
+    }
+    if (palindromo)
+        cout<<"Es palindromo";
+    else
+        cout<<"No es palindromo";
+    return 0;
+}
