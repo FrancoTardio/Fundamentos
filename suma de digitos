@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num,digito,sumaNum;
+    do{
+    cout<<"Ingrese un numero para sumar sus digitos ";
+    cin>>num;
+    if (num<0)
+        cout<<"valor no valido"<<endl;
+    }while(num<0);
+    if (num<10)
+        sumaNum=num;
+    else{
+        while (num>0){
+            digito=num%10;
+            num=num/10;
+            sumaNum=sumaNum+digito;
+        }
+    }
+    cout<<"la suma es: "<<sumaNum;
+    return 0;
+}
