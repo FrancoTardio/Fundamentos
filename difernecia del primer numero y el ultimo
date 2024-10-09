@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+	int digito1, digito2,numE,tam,dif;
+	string num,dig1,dig2;
+		cout << "Ingrese un numero: ";
+		getline(cin, num);
+	tam = num.length();
+	for (int i = 0; i < tam / 2; i++) {
+		digito1 = num.at(i)-'0';
+		digito2 = num.at(tam - 1 - i)-'0';
+		dif = digito1 - digito2;
+		if (dif < 0)
+			dif *= -1;
+		cout << "La diferencia entre "<<digito1<<" y "<<digito2 << " es: " << dif<<endl;
+	}
+	return 0;
+}
