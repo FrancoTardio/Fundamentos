@@ -2,8 +2,8 @@
 #include <string>
 using namespace std;
 int main() {
-	int digito1, digito2,numE,tam,dif;
-	string num,dig1,dig2;
+	int digito1,digito2,tam,dif;
+	string num;
 		cout << "Ingrese un numero: ";
 		getline(cin, num);
 	tam = num.length();
