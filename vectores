@@ -1,0 +1,143 @@
+#include <iostream>
+#define MAX 100
+
+using namespace std;
+
+
+/*void vectores(int tam, int n, int op, int m, int A[MAX], int B[MAX], int C[MAX]);*/
+void cargar(int vec[], int n);
+void mostrar(int vec[], int n);
+void unir(int v1[], int n, int v2[], int m, int vec[], int& tam);
+void burbuja(int vec[], int m);
+void Promedio(int vec[], int tm);
+
+void main() {
+	char auxV;
+	int IntV,auxTam,tam, n, op, m, A[MAX], B[MAX], C[MAX];
+	do {
+		cout << "Ingresar el tamaño del primer vector:";
+		cin >> n;
+	} while ((n <= 0) || (n > MAX));
+	
+	do {
+		cout << "Ingresar el tamaño del segundo vector:";
+		cin >> m;
+	} while ((m <= 0) || (m > MAX));
+	
+	do {
+		cout << "----MENU----" << endl;
+		cout << "1.Cargar dos vectores" << endl;
+		cout << "2.Mostrar" << endl;
+		cout << "3.Unir" << endl;
+		cout << "4.Burbuja" << endl;
+		cout << "5.Promedio" << endl;
+		cout << "0.Salir" << endl;
+		cout << "-------------" << endl;
+		cin >> op;
+
+		switch (op) {
+		case 1:
+			cout << "Primer vector" << endl;
+			cargar(A, n); // Cargar el primer vector
+			cout << "Segundo vector" << endl;
+			cargar(B, m); // Cargar el segundo vector
+			break;
+		case 2:
+			mostrar(C, tam); // Muestro el vector C
+			break;
+		case 3:
+			unir(A, n, B, m, C, tam); // Unir los dos vectores en C
+			break;
+		case 4:
+			burbuja(C, tam); // Clasificados en orden ascendente
+			break;
+		case 5:
+			do {
+				cout << "Escoje un vector: " << endl;
+				cout << "1.A" << endl;
+				cout << "2.B" << endl;
+				cout << "3.C" << endl;
+				cin >> auxV;
+			} while (auxV < 0);
+			switch (auxV) {
+			case 1:
+				Promedio(A, n);
+				break;
+			case 2:
+				Promedio(B, m);
+				break;
+			case 3:
+				Promedio(C, tam);
+				break;
+			default:
+				break;
+			}
+			break;
+		default:
+			break;
+		}
+	} while (op != 0);
+}
+/*void vectores(int tam, int n, int op, int m, int A[MAX], int B[MAX], int C[MAX]) {
+	do {
+		cout << "Ingresar el tamaño del primer vector:";
+		cin >> n;
+	} while ((n <= 0) || (n > MAX));
+	cargar(A, n); // Cargar el primer vector
+	do {
+		cout << "Ingresar el tamaño del segundo vector:";
+		cin >> m;
+	} while ((m <= 0) || (m > MAX));
+	cargar(B, m); // Cargar el segundo vector
+	
+}*/
+
+void cargar(int vec[], int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Vector[" << i << "]= ";
+		cin >> vec[i];
+	}
+}
+
+void mostrar(int vec[], int n)
+{
+	for (int i = 0; i < n; i++)
+		cout << "Vector[" << i << "]= " << vec[i] << endl;
+}
+
+void unir(int v1[], int n, int v2[], int m, int vec[], int& tam)
+{
+	for (int i = 0; i < n; i++)  // Copio el primer vector v1
+		vec[i] = v1[i];
+	for (int i = 0; i < m; i++) // Copio el segundo vector v2
+		vec[i + n] = v2[i];
+	tam = n + m;
+	cout << "Vectores unidos!"<<endl;
+}
+
+void burbuja(int vec[], int m)
+{
+	int aux;
+	for (int i = 0; i < m - 1; i++)
+	{
+		for (int j = i + 1; j < m; j++)
+			if (vec[i] > vec[j])
+			{
+				aux = vec[j];
+				vec[j] = vec[i];
+				vec[i] = aux;
+			}
+	}
+	cout << "Vectores ordenados!" << endl;
+}
+void Promedio(int vec[], int tm)
+{
+	float sum=0,prom;
+	for (int i = 0; i < tm; i++) {
+		sum += vec[i];
+	}
+	prom = sum / tm;
+	cout << "Promedio es: " << prom<<endl;
+}
