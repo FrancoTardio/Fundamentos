@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+void pedir();
+int suma(int n);
+int main() {
+    int n;
+    do {
+        cout << "======MENU=======" << endl;
+        cout << "1. sumar numeros" << endl;
+        cout << "0. Salir" << endl;
+        cout << "======MENU=======" << endl;
+        cin >> n;
+
+        switch (n) {
+        case 1:
+            pedir();
+            break;
+        case 0:
+            cout << "Saliendo del programa..." << endl;
+            break;
+        default:
+            cout << "Opcion no valida. Intente de nuevo." << endl;
+        }
+    } while (n != 0);
+    return 0;
+}
+void pedir() {
+    int n;
+    do{
+        cout << "Ingrese un numero postivo: ";
+        cin >> n;
+    } while (n < 0);
+    cout << "la suma es: " << suma(n)<<endl;
+    suma(n);
+}
+int suma(int n) {
+    int sum=0, cont=1;
+    while (cont <= n) {
+        sum += cont;
+        cont++;
+    }
+    return sum;
+}
